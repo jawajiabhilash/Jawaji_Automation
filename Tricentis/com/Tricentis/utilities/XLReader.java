@@ -3,8 +3,6 @@ package com.Tricentis.utilities;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-
-import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -13,25 +11,19 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import baseTest.ObjectRepository;
 
 public class XLReader extends ObjectRepository {
-	String filePath = "/Demo/Tricentis/com/Tricenties/testData/DD1.xlsx";
+	String filePath;
 	Workbook wb;
-	static Sheet sh;
+	Sheet sh;
 
 	public XLReader() {
-
-		// open file - workbook
-		File testDataFile = new File(filePath);
-		try {
-			wb = WorkbookFactory.create(testDataFile);
-		} catch (EncryptedDocumentException | IOException e) {
-			// TODO Auto-generated catch block
-			e.getMessage();
-		}
-		sh = wb.getSheet("Sheet1");
+		filePath = "C:\\Users\\User\\eclipse-workspace\\Demo\\Tricentis\\com\\Tricenties\\testData\\VehicleInsuranceCalcualator_TestData.xlsx";
 	}
 
 	// get test data from test data sheet in hashmap based on row number
-	public static HashMap<String, String> getTestDataIntoMap(int rowNum) {
+	public HashMap<String, String> getTestDataIntoMap(int rowNum) throws IOException {
+		File testDataFile = new File(filePath);
+		wb = WorkbookFactory.create(testDataFile);
+		sh = wb.getSheet("InsurancePremium");
 		// read data row by row and put in map
 		HashMap<String, String> hm = new HashMap<String, String>();
 
@@ -43,18 +35,20 @@ public class XLReader extends ObjectRepository {
 		return hm;
 	}
 
-	public static int getRowCount() {
+	public int getRowCount() {
 		return sh.getLastRowNum();
 
 	}
 
-	public static void main(String[] args) throws IOException {
-
-		System.out.println("the row count is " + XLReader.getRowCount());
-		System.out.println("the column count is " + XLReader.getCellCount());
-	}
-
-	public static int getCellCount() {
+	public int getCellCount() {
 		return sh.getRow(0).getLastCellNum();
 	}
+
+	public static void main(String[] args) throws IOException {
+		XLReader xr = new XLReader();
+		System.out.println(xr.getTestDataIntoMap(2));
+		System.out.println("the row count is " + xr.getRowCount());
+		System.out.println("the column count is " + xr.getCellCount());
+	}
+
 }

@@ -1,17 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-05T23:06:13 IST" name="Default suite" finished-at="2022-03-05T23:06:31 IST" duration-ms="17114">
+  <suite started-at="2022-04-10T22:43:23 IST" name="Default suite" finished-at="2022-04-10T22:45:17 IST" duration-ms="114419">
     <groups>
     </groups>
-    <test started-at="2022-03-05T23:06:13 IST" name="Default test" finished-at="2022-03-05T23:06:31 IST" duration-ms="17114">
-      <class name="SeleniumFAQs.PdfReader">
-        <test-method signature="pdfReaderText()[pri:0, instance:SeleniumFAQs.PdfReader@6da21078]" started-at="2022-03-05T23:06:13 IST" name="pdfReaderText" finished-at="2022-03-05T23:06:31 IST" duration-ms="17055" status="PASS">
+    <test started-at="2022-04-10T22:43:23 IST" name="Default test" finished-at="2022-04-10T22:45:17 IST" duration-ms="114419">
+      <class name="com.Tricenties.tests.EnterVehicleDataTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.Tricenties.tests.EnterVehicleDataTest@272113c4]" started-at="2022-04-10T22:43:23 IST" name="setUp" finished-at="2022-04-10T22:45:16 IST" duration-ms="112931" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pdfReaderText -->
-      </class> <!-- SeleniumFAQs.PdfReader -->
+        </test-method> <!-- setUp -->
+        <test-method signature="EnterVehicleData(java.lang.Object)[pri:0, instance:com.Tricenties.tests.EnterVehicleDataTest@272113c4]" started-at="2022-04-10T22:45:16 IST" name="EnterVehicleData" data-provider="vehicledata" finished-at="2022-04-10T22:45:16 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.apache.poi.ss.usermodel.Sheet.getLastRowNum()" because "this.sh" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "org.apache.poi.ss.usermodel.Sheet.getLastRowNum()" because "this.sh" is null
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:50)
+at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:146)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:798)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.apache.poi.ss.usermodel.Sheet.getLastRowNum()" because "this.sh" is null
+at com.Tricentis.utilities.XLReader.getRowCount(XLReader.java:39)
+at baseTest.BaseTest.testDataSupplier(BaseTest.java:81)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:77)
+at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:46)
+... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnterVehicleData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.Tricenties.tests.EnterVehicleDataTest@272113c4]" started-at="2022-04-10T22:45:16 IST" name="tearDown" finished-at="2022-04-10T22:45:17 IST" duration-ms="1426" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.Tricenties.tests.EnterVehicleDataTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

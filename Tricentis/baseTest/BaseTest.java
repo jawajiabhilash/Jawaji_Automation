@@ -76,11 +76,11 @@ public class BaseTest extends ObjectRepository {
 	}
 
 	@DataProvider(name = "vehicledata")
-	public Object[][] testDataSupplier() {
+	public Object[][] testDataSupplier() throws IOException  {
 
 		Object[][] obj = new Object[xlReader.getRowCount()][1];
 		for (int i = 0; i < xlReader.getRowCount(); i++) {
-			HashMap<String, String> testData = XLReader.getTestDataIntoMap(i);
+			HashMap<String, String> testData = xlReader.getTestDataIntoMap(i);
 			obj[i-1][0] = testData;
 
 		}
