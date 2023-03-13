@@ -3,6 +3,7 @@ package baseTest;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -19,11 +20,15 @@ import com.Tricentis.pages.EnterVehicleDataPage;
 import com.Tricentis.pages.HomePage;
 import com.Tricentis.pages.SelectPriceOptionPage;
 import com.Tricentis.pages.SenQuotePage;
+import com.Tricentis.utilities.ExcelReader;
 import com.Tricentis.utilities.ReadConfig;
 import com.Tricentis.utilities.XLReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest extends ObjectRepository {
+	protected static String usr;
+	protected static String pwd;
+	protected static String msg;
 
 	public static void LaunchBrowserAndNavigate() throws Exception {
 		String url = ReadConfig.getPropertyValueByKey("url");
@@ -87,4 +92,17 @@ public class BaseTest extends ObjectRepository {
 		return obj;
 
 	}
+	
+	public static void getTestData(String FilePath,String sheetName, int rowNumber) throws Exception {
+		
+		ExcelReader er= new ExcelReader(FilePath);
+		Map<String, String> testData=er.getDataInMap(sheetName, rowNumber);
+		usr=testData.get("UserName");
+		pwd=testData.get("Password");
+		msg=testData.get("Login");
+		
+		
+		
+	}
+	
 }
